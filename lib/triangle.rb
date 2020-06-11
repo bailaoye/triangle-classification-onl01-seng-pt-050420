@@ -4,7 +4,9 @@ class Triangle
   @sides = []
 
   def initialize(sideA, sideB, sideC)
-    @sideA, @sideB, @sideC = sideA, sideB, sideC
+    @sideA = sideA
+    @sideB = sideB
+    @sideC = sideC
     @sides = [sideA, sideB, sideC]
   end
 
