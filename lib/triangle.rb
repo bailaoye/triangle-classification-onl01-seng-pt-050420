@@ -1,17 +1,17 @@
 require 'pry'
 class Triangle
   attr_accessor :sideA, :sideB, :sideC
-  @triangle = []
+  @triangle_sides = []
 
   def initialize(sideA, sideB, sideC)
     @sideA = sideA
     @sideB = sideB
     @sideC = sideC
-    @triangle = [sideA, sideB, sideC]
+    @triangle_sides = [sideA, sideB, sideC]
   end
 
   def negative?
-    @triangle.each do |length|
+    @triangle_sides.each do |length|
       if(length <= 0)
         return true
       end
@@ -36,7 +36,7 @@ class Triangle
 
   def kind
     if(negative? == true || valid? == false)
-      raise TriangleError
+      raise triangle_sidesError
     elsif(equilateral?)
       :equilateral
     elsif(scalene?)
@@ -48,6 +48,6 @@ class Triangle
 
 end
 
-class TriangleError < StandardError
+class triangle_sidesError < StandardError
 
 end
