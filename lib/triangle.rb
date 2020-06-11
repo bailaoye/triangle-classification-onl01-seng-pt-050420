@@ -7,6 +7,7 @@ class Triangle
     @A = A
     @B = B
     @C = C
+    @sides = [A, B, C]
   end
 
   end
