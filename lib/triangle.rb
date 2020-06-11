@@ -10,7 +10,6 @@ class Triangle
     @sides = [A, B, C]
   end
 
-  end
   class TriangleError < StandardError
   end
 end
