@@ -1,10 +1,8 @@
 class Triangle
   # write code here
-  attr_accessor :equilateral, :isosceles, :scalene
-  def initialize(equilateral, isosceles, scalene)
-    @equilateral = equilateral
-    @isosceles = isosceles
-    @scalene = scalene
+  attr_accessor :A, :B, :C
+  sides = []
+
   end
   class TriangleError < StandardError
   end
