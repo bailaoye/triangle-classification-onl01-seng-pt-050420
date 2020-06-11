@@ -36,7 +36,7 @@ class Triangle
 
   def kind
     if(negative? == true || valid? == false)
-      raise triangle_sidesError
+      raise TriangleError
     elsif(equilateral?)
       :equilateral
     elsif(scalene?)
@@ -48,6 +48,6 @@ class Triangle
 
 end
 
-class triangle_sidesError < StandardError
+class TriangleError < StandardError
 
 end
