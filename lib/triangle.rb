@@ -43,7 +43,7 @@ class Triangle
   end
 
   def kind
-    if(negative? == true || valid? == false || zero? == true)
+    if(negative? == true || valid? == false)
       raise TriangleError
     elsif(equilateral?)
       :equilateral
