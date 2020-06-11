@@ -1,17 +1,17 @@
 require 'pry'
 class Triangle
   attr_accessor :sideA, :sideB, :sideC
-  @sides = []
+  @triangle = []
 
   def initialize(sideA, sideB, sideC)
     @sideA = sideA
     @sideB = sideB
     @sideC = sideC
-    @sides = [sideA, sideB, sideC]
+    @triangle = [sideA, sideB, sideC]
   end
 
   def negative?
-    @sides.each do |length|
+    @triangle.each do |length|
       if(length <= 0)
         return true
       end
