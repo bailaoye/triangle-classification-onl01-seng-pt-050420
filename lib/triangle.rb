@@ -18,7 +18,7 @@ class Triangle
             :scalene
         end
     end
-    
+
     def illegal_triangle
         if one <= 0 || two <= 0 || three <= 0
             begin
@@ -35,6 +35,6 @@ class Triangle
         end
     end
 
-    class TriangleError < StandardError 
+    class TriangleError < StandardError
     end
 end
