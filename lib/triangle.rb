@@ -1,51 +1,39 @@
-require 'pry'
 class Triangle
-  attr_accessor :sideA, :sideB, :sideC
-  @triangle_sides = []
+  attr_accessor :one, :two, :three
 
-  def initialize(sideA, sideB, sideC)
-    @sideA = sideA
-    @sideB = sideB
-    @sideC = sideC
-    @triangle_sides = [sideA, sideB, sideC]
-  end
-
-  def negative?
-    @triangle_sides.each do |len|
-      if(len <= 0)
-        return true
-      end
+    def initialize (one, two, three)
+        @one = one
+        @two = two
+        @three = three
     end
-  end
 
-  def equilateral?
-    (@sideA == @sideB) && (@sideA == @sideC)
-  end
+    def kind
+        illegal_triangle
 
-  def scalene?
-    (@sideA != @sideB) && (@sideA!= @sideC) && (@sideB != @sideC)
-  end
-
-  def isosceles?
-    (@sideB == @sideC) || (@sideA == @sideB) || (@sideA = @sideC)
-  end
-
-  def valid?
-    (@sideB + @sideC > @sideA) && (@sideA + @sideB > @sideC) &&  (@sideA + @sideC > @sideB)
-  end
-
-  def kind
-    if(negative? == true || valid? == false)
-      raise TriangleError
-    elsif(equilateral?)
-      :equilateral
-    elsif(scalene?)
-      :scalene
-    elsif(isosceles?)
-      :isosceles
+        if one == two && one == three
+            :equilateral
+        elsif one == two || one == three || two == three
+            :isosceles
+        else
+            :scalene
+        end
     end
-  end
-
+    
+    def illegal_triangle
+        if one <= 0 || two <= 0 || three <= 0
+            begin
+                raise TriangleError
+            end
+        elsif one == nil || two == nil || three == nil
+            begin
+                raise TriangleError
+            end
+        elsif one + two <= three || one + three <= two || three + two <= one
+            begin
+                raise TriangleError
+            end
+        end
+    end
 end
 
 class TriangleError < StandardError
