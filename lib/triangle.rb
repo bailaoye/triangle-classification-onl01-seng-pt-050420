@@ -1,11 +1,11 @@
 require 'pry'
 class Triangle
-  attr_accessor :side1, :side2, :side3
+  attr_accessor :sideA, :sideB, :sideC
   @sides = []
 
-  def initialize(side1, side2, side3)
-    @side1, @side2, @side3 = side1, side2, side3
-    @sides = [side1, side2, side3]
+  def initialize(sideA, sideB, sideC)
+    @sideA, @sideB, @sideC = sideA, sideB, sideC
+    @sides = [sideA, sideB, sideC]
   end
 
   def kind
@@ -29,19 +29,19 @@ class Triangle
   end
 
   def equilateral?
-    (@side1 == @side2) && (@side1 == @side3)
+    (@sideA == @sideB) && (@sideA == @sideC)
   end
 
   def scalene?
-    (@side1 != @side2) && (@side1!= @side3) && (@side2 != @side3)
+    (@sideA != @sideB) && (@sideA!= @sideC) && (@sideB != @sideC)
   end
 
   def isosceles?
-    (@side2 == @side3) || (@side1 == @side2) || (@side1 = @side3)
+    (@sideB == @sideC) || (@sideA == @sideB) || (@sideA = @sideC)
   end
 
   def valid?
-    (@side1 + @side2 > @side3) && (@side2 + @side3 > @side1) && (@side1 + @side3 > @side2)
+    (@sideA + @sideB > @sideC) && (@sideB + @sideC > @sideA) && (@sideA + @sideC > @sideB)
   end
 
 end
