@@ -1,13 +1,13 @@
 class Triangle
   # write code here
-  attr_accessor :A, :B, :C
+  attr_accessor :sideA, :sideB, :sideC
   @sides = []
 
-  def initialize(A, B, C)
-    @A = A
-    @B = B
-    @C = C
-    @sides = [A, B, C]
+  def initialize(sideA, sideB, sideC)
+    @sideA = sideA
+    @sideB = sideB
+    @sideC = sideC
+    @sides = [sideA, sideB, sideC]
   end
 
   class TriangleError < StandardError
