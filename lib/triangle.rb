@@ -1,7 +1,7 @@
 class Triangle
   # write code here
   attr_accessor :A, :B, :C
-  sides = []
+  @sides = []
 
   end
   class TriangleError < StandardError
