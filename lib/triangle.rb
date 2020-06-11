@@ -34,12 +34,8 @@ class Triangle
     (@sideB + @sideC > @sideA) && (@sideA + @sideB > @sideC) &&  (@sideA + @sideC > @sideB)
   end
 
-  def invalid_triangle?
-    sides.any? { |side| side <= 0 } || sides[0] + sides[1] <= sides[2]
-  end
-
   def kind
-    if(negative? == true || valid? == false || invalid_triangle? == true)
+    if(negative? == true || valid? == false)
       raise TriangleError
     elsif(equilateral?)
       :equilateral
