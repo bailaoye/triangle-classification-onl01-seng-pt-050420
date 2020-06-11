@@ -11,8 +11,16 @@ class Triangle
   end
 
   def negative?
+    @triangle_sides.each do |len|
+      if(len <= 0)
+        return true
+      end
+    end
+  end
+
+  def zero?
     @triangle_sides.each do |length|
-      if(length <= 0)
+      if(len = 0)
         return true
       end
     end
