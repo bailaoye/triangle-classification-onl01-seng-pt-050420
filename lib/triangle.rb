@@ -18,7 +18,6 @@ class Triangle
     end
   end
 
-
   def equilateral?
     (@sideA == @sideB) && (@sideA == @sideC)
   end
