@@ -10,18 +10,6 @@ class Triangle
     @sides = [sideA, sideB, sideC]
   end
 
-  def kind
-    if(negative? == true || valid? == false)
-      raise TriangleError
-    elsif(equilateral?)
-      :equilateral
-    elsif(scalene?)
-      :scalene
-    elsif(isosceles?)
-      :isosceles
-    end
-  end
-
   def negative?
     @sides.each do |length|
       if(length <= 0)
@@ -43,7 +31,19 @@ class Triangle
   end
 
   def valid?
-    (@sideA + @sideB > @sideC) && (@sideB + @sideC > @sideA) && (@sideA + @sideC > @sideB)
+    (@sideB + @sideC > @sideA) && (@sideA + @sideB > @sideC) &&  (@sideA + @sideC > @sideB)
+  end
+
+  def kind
+    if(negative? == true || valid? == false)
+      raise TriangleError
+    elsif(equilateral?)
+      :equilateral
+    elsif(scalene?)
+      :scalene
+    elsif(isosceles?)
+      :isosceles
+    end
   end
 
 end
