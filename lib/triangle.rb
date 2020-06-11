@@ -18,13 +18,6 @@ class Triangle
     end
   end
 
-  def zero?
-    @triangle_sides.each do |length|
-      if(len = 0)
-        return true
-      end
-    end
-  end
 
   def equilateral?
     (@sideA == @sideB) && (@sideA == @sideC)
